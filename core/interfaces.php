@@ -13,6 +13,6 @@ interface IExpressionEvaluator {
     function evaluate($args);
 }
 
-interface IOutputGenerator {
-        function output($result, $true, $false, $content);
+interface IShortcodeGenerator {
+        function get($result, $true, $false, $content);
 }

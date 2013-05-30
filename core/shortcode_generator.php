@@ -1,14 +1,13 @@
 <?php
 
-class ShortcodeGenerator implements IOutputGenerator {
+class ShortcodeGenerator implements IShortcodeGenerator {
         function get($result, $true, $false, $content) {
                 $which = ($result) ? $true : $false;
                 return $this->pull_shortcode($which, $content);
         }
 
         private function pull_shortcode($which, $content) {
-                //do regex to get all text between {{$false}} and {{/$false}}
-                //then execute that text as a shortcode, returning the result
+                //regex to get all text between {{$which}} and {{/$which}}
                 try {
 
                         $matches = array();
